@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Lab 4 — Student Registration</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- ======= HEADER ======= -->
+  <header class="site-header">
+    <h1>Student Registration Form</h1>
+    <p class="muted">WAD621S • Lab 4</p>
+  </header>
+
+  <main class="container">
+    <!-- ======= REGISTRATION FORM ======= -->
+    <section class="form-area">
+      <h2>Registration Form</h2>
+
+      <form id="regForm" novalidate>
+        <!-- First Name -->
+        <div class="row">
+          <label for="first">First name *</label>
+          <input id="first" name="first" type="text" />
+          <small class="error" id="err-first"></small>
+        </div>
+
+        <!-- Last Name -->
+        <div class="row">
+          <label for="last">Last name *</label>
+          <input id="last" name="last" type="text" />
+          <small class="error" id="err-last"></small>
+        </div>
+
+        <!-- Student Number -->
+        <div class="row">
+          <label for="studentNo">Student Number *</label>
+          <input id="studentNo" name="studentNo" type="text" placeholder="e.g. 220071209" />
+          <small class="error" id="err-studentNo"></small>
+        </div>
+
+        <!-- Email -->
+        <div class="row">
+          <label for="email">Email *</label>
+          <input id="email" name="email" type="email" />
+          <small id="emailCount" class="muted"></small>
+          <small class="error" id="err-email"></small>
+        </div>
+
+        <!-- Programme Dropdown -->
+        <div class="row">
+          <label for="prog">Programme *</label>
+          <select id="prog" name="prog">
+            <option value="">-- pick programme --</option>
+            <option>Computer Science</option>
+            <option>Informatics</option>
+            <option>Information Systems</option>
+            <option>Software Engineering</option>
+            <option>Cyber Security</option>
+            <option>Business Computing</option>
+            <option>Data Science</option>
+            <option>Artificial Intelligence</option>
+            <option>Multimedia Technology</option>
+          </select>
+          <small class="error" id="err-prog"></small>
+        </div>
+
+        <!-- Year of Study -->
+        <fieldset class="row grid-2">
+          <legend>Year of study *</legend>
+          <label><input type="radio" name="year" value="1" /> 1</label>
+          <label><input type="radio" name="year" value="2" /> 2</label>
+          <label><input type="radio" name="year" value="3" /> 3</label>
+          <label><input type="radio" name="year" value="4" /> 4</label>
+        </fieldset>
+        <small class="error" id="err-year"></small>
+
+        <!-- Interests -->
+        <div class="row grid-2">
+          <legend class="muted">Interests</legend>
+          <label><input type="checkbox" name="interests" value="Web Dev" /> Web Dev</label>
+          <label><input type="checkbox" name="interests" value="AI" /> AI</label>
+          <label><input type="checkbox" name="interests" value="Data" /> Data</label>
+          <label><input type="checkbox" name="interests" value="Cybersecurity" /> Cybersecurity</label>
+          <label><input type="checkbox" name="interests" value="Mobile Apps" /> Mobile Apps</label>
+          <label><input type="checkbox" name="interests" value="Cloud Computing" /> Cloud Computing</label>
+          <label><input type="checkbox" name="interests" value="Networking" /> Networking</label>
+          <label><input type="checkbox" name="interests" value="UI/UX" /> UI/UX</label>
+        </div>
+
+        <!-- Photo Upload -->
+        <div class="row">
+          <label for="photo">Upload Photo</label>
+          <input id="photo" name="photo" type="file" accept="image/*" />
+        </div>
+
+        <!-- Buttons -->
+        <div class="actions">
+          <button type="submit" class="btn">Add Student</button>
+          <button type="button" id="clearBtn" class="btn secondary">Clear Form</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- ======= PROFILES SECTION ======= -->
+    <section class="output-area">
+      <h2>Profiles</h2>
+
+      <input id="searchBox" type="text" placeholder="Search student..." class="search" />
+
+      <div id="cards" class="cards"></div>
+
+      <h3>Summary Table</h3>
+      <div class="table-wrap">
+        <table id="summary">
+          <thead>
+            <tr><th>Student No.</th><th>Name</th><th>Programme</th><th>Year</th><th>Interests</th><th>Action</th></tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <!-- ======= FOOTER ======= -->
+  <footer class="site-footer">
+    <small>&copy; Lutherson|Shikongo 220071209 • WAD621S Lab 4</small>
+  </footer>
+
+  <!-- Success Message -->
+  <div id="successBox" class="success-box hidden">
+    <p id="successMessage"></p>
+    <button id="okBtn" class="btn">OK</button>
+  </div>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
